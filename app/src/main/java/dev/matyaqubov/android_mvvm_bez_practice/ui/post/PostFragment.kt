@@ -19,7 +19,8 @@ import me.ruyeo.smarttecno.utils.UiStateList
 class PostFragment : Fragment(R.layout.fragment_post) {
 
     private lateinit var viewModel: PostViewModel
-//    private lateinit var viewModel by viewModels<PostViewModel>() for Dagger Hit
+
+    //    private lateinit var viewModel by viewModels<PostViewModel>() for Dagger Hit
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
