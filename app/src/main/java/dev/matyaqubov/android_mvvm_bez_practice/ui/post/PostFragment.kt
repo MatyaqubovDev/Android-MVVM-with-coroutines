@@ -55,7 +55,7 @@ class PostFragment : Fragment(R.layout.fragment_post) {
             this,
             PostViewModelFactory(PostRepository(ApiClient.createService(ApiService::class.java)))
         )[PostViewModel::class.java]
-//        ViewModelProvider(
+//       viewModel =  ViewModelProvider(
 //            this,
 //            PostViewModelFactory(PostRepository(ApiClient.createService(ApiService::class.java)))
 //        ).get(PostViewModel::class.java)
