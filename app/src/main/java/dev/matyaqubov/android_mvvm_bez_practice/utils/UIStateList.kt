@@ -1,4 +1,4 @@
-package me.ruyeo.smarttecno.utils
+package dev.matyaqubov.android_mvvm_bez_practice.utils
 
 sealed class UiStateList<out T> {
     data class SUCCESS<out T>(val data: List<T>):UiStateList<T>()

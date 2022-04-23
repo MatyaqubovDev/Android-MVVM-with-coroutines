@@ -13,7 +13,7 @@ import dev.matyaqubov.android_mvvm_bez_practice.data.api.ApiClient
 import dev.matyaqubov.android_mvvm_bez_practice.data.api.ApiService
 import dev.matyaqubov.android_mvvm_bez_practice.repository.PostRepository
 import dev.matyaqubov.android_mvvm_bez_practice.repository.viewmodelfactory.PostViewModelFactory
-import me.ruyeo.smarttecno.utils.UiStateList
+import dev.matyaqubov.android_mvvm_bez_practice.utils.UiStateList
 
 
 class PostFragment : Fragment(R.layout.fragment_post) {
@@ -35,13 +35,13 @@ class PostFragment : Fragment(R.layout.fragment_post) {
             viewModel.post.collect {
                 when (it) {
                     is UiStateList.LOADING -> {
-                        //Show Loading....
+                        //Show Loading
                     }
                     is UiStateList.SUCCESS -> {
-                        Log.d("TAG", "setupUi: ${it.data}")
+                        Log.d("SUCCESS", "setupUi: ${it.data}")
                     }
                     is UiStateList.ERROR -> {
-                        Log.d("TAG", "setupUi: ${it.message}")
+                        Log.d("ERROR", "setupUi: ${it.message}")
                     }
                     else -> Unit
                 }
@@ -50,7 +50,8 @@ class PostFragment : Fragment(R.layout.fragment_post) {
     }
 
     private fun setupViewModel() {
-       viewModel =  ViewModelProvider(
+
+        viewModel = ViewModelProvider(
             this,
             PostViewModelFactory(PostRepository(ApiClient.createService(ApiService::class.java)))
         ).get(PostViewModel::class.java)

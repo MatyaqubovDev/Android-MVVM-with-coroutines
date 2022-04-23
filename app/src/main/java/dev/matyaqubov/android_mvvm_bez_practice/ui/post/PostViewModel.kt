@@ -4,9 +4,10 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dev.matyaqubov.android_mvvm_bez_practice.model.Post
 import dev.matyaqubov.android_mvvm_bez_practice.repository.PostRepository
+import dev.matyaqubov.android_mvvm_bez_practice.utils.UiStateList
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
-import me.ruyeo.smarttecno.utils.UiStateList
+
 
 class PostViewModel(private val repository: PostRepository) : ViewModel() {
     private val _postState = MutableStateFlow<UiStateList<Post>>(UiStateList.EMPTY)
