@@ -50,15 +50,10 @@ class PostFragment : Fragment(R.layout.fragment_post) {
     }
 
     private fun setupViewModel() {
-
-        viewModel = ViewModelProvider(
+       viewModel =  ViewModelProvider(
             this,
             PostViewModelFactory(PostRepository(ApiClient.createService(ApiService::class.java)))
-        )[PostViewModel::class.java]
-//       viewModel =  ViewModelProvider(
-//            this,
-//            PostViewModelFactory(PostRepository(ApiClient.createService(ApiService::class.java)))
-//        ).get(PostViewModel::class.java)
+        ).get(PostViewModel::class.java)
     }
 
 }
